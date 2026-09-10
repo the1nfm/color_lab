@@ -1,0 +1,16 @@
+# Node.js dependencies
+node_modules/
+
+# Vite build output
+dist/
+
+# Rust build output
+target/
+
+# macOS
+.DS_Store
+
+# Environment files
+.env
+.env.local
+.env.*.local
