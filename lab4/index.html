@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>ЛР4. Базовые растровые алгоритмы</title>
+<link rel="stylesheet" href="/src/style.css"></head>
+<body>
+<aside>
+  <h2>Растровые алгоритмы</h2>
+  <fieldset><legend>Отрезок</legend>
+    <label>x0 <input id="x0" type="number" value="-8"></label>
+    <label>y0 <input id="y0" type="number" value="-3"></label>
+    <label>x1 <input id="x1" type="number" value="10"></label>
+    <label>y1 <input id="y1" type="number" value="6"></label>
+    <select id="lineAlgo">
+      <option value="step">Пошаговый</option>
+      <option value="dda">ЦДА</option>
+      <option value="bres" selected>Брезенхем</option>
+      <option value="wu">Ву (сглаживание)</option>
+      <option value="all">Сравнить все</option>
+    </select>
+    <button id="drawLine">Построить отрезок</button>
+  </fieldset>
+  <fieldset><legend>Окружность</legend>
+    <label>cx <input id="cx" type="number" value="0"></label>
+    <label>cy <input id="cy" type="number" value="0"></label>
+    <label>R <input id="rad" type="number" value="7" min="0"></label>
+    <button id="drawCircle">Брезенхем (окружность)</button>
+  </fieldset>
+  <fieldset><legend>Кастл–Питвей (эллипс/дуга)</legend>
+    <label>a <input id="ea" type="number" value="10" min="0"></label>
+    <label>b <input id="eb" type="number" value="5" min="0"></label>
+    <button id="drawEllipse">Построить кривую</button>
+  </fieldset>
+  <fieldset><legend>Вид</legend>
+    <label>Масштаб <input id="zoom" type="range" min="2" max="60" value="22"></label>
+    <button id="clear">Очистить</button>
+    <button id="reset">Сбросить вид</button>
+  </fieldset>
+  <fieldset><legend>Бенчмарк</legend>
+    <button id="bench">Запустить стресс-тест</button>
+    <div id="benchStatus"></div>
+  </fieldset>
+  <p class="hint">Колесо мыши — масштаб, перетаскивание — сдвиг, клик — задать точки отрезка (по очереди A и B).</p>
+  <div id="mouse">—</div>
+</aside>
+<main>
+  <canvas id="grid" width="900" height="560"></canvas>
+  <div class="explain">
+    <b>Привязка координат к сетке:</b> целое число (x, y) — это <i>центр</i> клетки; клетка покрывает
+    [x−0.5; x+0.5]×[y−0.5; y+0.5]. Ось Y направлена вверх, начало координат (0,0) — центр клетки в центре растра.
+    Яркость клетки = intensity (для Ву — коэффициент покрытия, α).
+  </div>
+  <pre id="trace"></pre>
+  <div id="charts"></div>
+</main>
+<script type="module" src="/src/main.ts"></script>
+</body></html>

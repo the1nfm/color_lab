@@ -1,0 +1,9 @@
+body{margin:0;display:flex;font-family:system-ui,Arial,sans-serif;background:#f4f5f7;color:#222}
+aside{width:270px;padding:10px;background:#fff;border-right:1px solid #ccc;height:100vh;overflow:auto;box-sizing:border-box}
+main{padding:10px;flex:1;overflow:auto;height:100vh;box-sizing:border-box}
+fieldset{margin-bottom:8px}label{display:flex;justify-content:space-between;margin:3px 0}
+input[type=number]{width:80px}button,select{width:100%;margin-top:4px;padding:4px}
+canvas{background:#fff;border:1px solid #999;display:block}
+.explain{font-size:13px;margin:6px 0;max-width:900px}
+pre{background:#fff;border:1px solid #ccc;padding:8px;font-size:12px;max-height:240px;overflow:auto}
+.hint{font-size:12px;color:#555}#charts canvas{display:inline-block;margin:6px 6px 0 0}
